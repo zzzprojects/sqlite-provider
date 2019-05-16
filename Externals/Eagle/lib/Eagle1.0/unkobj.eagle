@@ -1,0 +1,89 @@
+###############################################################################
+#
+# unkobj.eagle --
+#
+# Extensible Adaptable Generalized Logic Engine (Eagle)
+# Eagle Unknown Object Package File
+#
+# Copyright (c) 2007-2012 by Joe Mistachkin.  All rights reserved.
+#
+# See the file "license.terms" for information on usage and redistribution of
+# this file, and for a DISCLAIMER OF ALL WARRANTIES.
+#
+# RCS: @(#) $Id: $
+#
+###############################################################################
+
+#
+# NOTE: Use our own namespace here because even though we do not directly
+#       support namespaces ourselves, we do not want to pollute the global
+#       namespace if this script actually ends up being evaluated in Tcl.
+#
+namespace eval ::Eagle {
+  #
+  # NOTE: This is an [unknown] procedure that attempts to lookup the name
+  #       as a CLR type and then attempts to use [object invoke] with it,
+  #       merging options and arguments as necessary.
+  #
+  proc unknownObjectInvoke { level name args } {
+    if {[llength [info commands object]] > 0 && \
+        ([isManagedType $name] || [canGetManagedType $name name])} then {
+      #
+      # NOTE: Get possible options for the [object invoke] sub-command.
+      #
+      set options [object invoke Utility GetInvokeOptions Invoke]
+
+      #
+      # NOTE: Create argument list for the artificial [object invoke]
+      #       alias.  This always has two arguments.
+      #
+      set arguments1 [object create ArgumentList object invoke]
+
+      #
+      # NOTE: Create argument list for the entire command being handled.
+      #       There may be options right after the command name itself.
+      #
+      set arguments2 [eval \
+          object create ArgumentList [concat [list $name] $args]]
+
+      #
+      # NOTE: Setup output arguments needed for the MergeArguments method.
+      #
+      set arguments3 null; set error null
+
+      #
+      # NOTE: Attempt to merge the option and non-option arguments into a
+      #       single list of arguments.
+      #
+      set code [object invoke -alias -flags +NonPublic \
+          Interpreter.GetActive MergeArguments $options $arguments1 \
+          $arguments2 2 1 false false arguments3 error]
+
+      #
+      # NOTE: Was the argument merging process successful?
+      #
+      if {$code eq "Ok"} then {
+        #
+        # NOTE: Jump up from our call frame (and optionally that of our
+        #       caller) and attempt to invoke the specified static object
+        #       method with the final list of merged arguments.
+        #
+        return [uplevel [expr {$level + 1}] [$arguments3 ToString]]
+      } else {
+        #
+        # NOTE: Failed to merge the arguments, raise an error.
+        #
+        error [$error ToString]
+      }
+    }
+
+    continue; # NOTE: Not handled.
+  }
+
+  #
+  # NOTE: Provide the Eagle "unknown object" package to the interpreter.
+  #
+  package provide Eagle.Unknown.Object \
+    [expr {[isEagle] ? [info engine PatchLevel] : "1.0"}]
+}
+

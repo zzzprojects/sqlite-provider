@@ -1,0 +1,27 @@
+<!--
+ *
+ * SQLite.NET.Platform.Settings.targets -
+ *
+ * Written by Joe Mistachkin.
+ * Released to the public domain, use at your own risk!
+ *
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  ******************************************************************************
+  **                        Platform-Specific Imports                         **
+  ******************************************************************************
+  -->
+
+  <Import Project="$(SQLiteNetDir)\Targets\SQLite.NET.Mono.Settings.targets"
+          Condition="Exists('$(SQLiteNetDir)\Targets\SQLite.NET.Mono.Settings.targets') And
+                     (('$(MonoBuild)' != '' And '$(MonoBuild)' != 'false') Or
+                      Exists('$(MSBuildBinPath)\xbuild.exe'))" />
+
+  <Import Project="$(SQLiteNetDir)\Targets\SQLite.NET.NetStandard20.Settings.targets"
+          Condition="Exists('$(SQLiteNetDir)\Targets\SQLite.NET.NetStandard20.Settings.targets') And
+                     (('$(DotNetCoreBuild)' != '' And '$(DotNetCoreBuild)' != 'false') Or
+                      Exists('$(MSBuildBinPath)\MSBuild.dll') Or
+                      '$(TargetFramework)' == 'netstandard2.0' Or
+                      '$(TargetFramework)' == 'netcoreapp2.0')" />
+</Project>

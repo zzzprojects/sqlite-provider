@@ -1,0 +1,40 @@
+Installer.exe: #[getLineNumber]: Configuration.Process: No actual changes will be made to this system because "what-if" mode is enabled.
+Installer.exe: #[getLineNumber]: Configuration.IsSystemEf6AssemblyAvailable: Entity Framework 6 assembly was resolved to "[file nativename [file join [getBuildDirectory true] EntityFramework.dll]]".
+Installer.exe: #[getLineNumber]: Installer.Main: GacRemove: assemblyPath = "[file nativename [file join [getBuildDirectory true] SQLite.Designer.dll]]"
+Installer.exe: #[getLineNumber]: Installer.Main: GacRemove: assemblyPath = "[file nativename [file join [getBuildDirectory true] System.Data.SQLite.EF6.dll]]"
+Installer.exe: #[getLineNumber]: Installer.Main: GacRemove: assemblyPath = "[file nativename [file join [getBuildDirectory true] System.Data.SQLite.Linq.dll]]"
+Installer.exe: #[getLineNumber]: Installer.Main: GacRemove: assemblyPath = "[file nativename [file join [getBuildDirectory true] System.Data.SQLite.dll]]"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\.NETFramework\v4.5.50709", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\.NETFramework\v4.5.50709\AssemblyFoldersEx", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\.NETFramework\v4.5.50709\AssemblyFoldersEx", subKeyName = "System.Data.SQLite"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\.NETFramework\v4.0.30319", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\.NETFramework", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.GetValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\.NETFramework", name = "InstallRoot", defaultValue = <null>
+Installer.exe: #[getLineNumber]: Installer.RemoveDbProviderFactory: addElement = <null>, removeElement = <null>
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.GetValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", name = "InstallDir", defaultValue = <null>
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", subKeyName = "Packages", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteSubKeyTree: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0\Packages", subKeyName = "{dcbe6c8d-0e57-4099-a183-98ff74c64d9c}"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", subKeyName = "Menus", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0\Menus", name = "{dcbe6c8d-0e57-4099-a183-98ff74c64d9c}"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", subKeyName = "Services", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteSubKeyTree: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0\Services", subKeyName = "{dcbe6c8d-0e57-4099-a183-98ff74c64d9d}"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.GetValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", name = "InstallDir", defaultValue = <null>
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", subKeyName = "DataSources", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteSubKeyTree: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0\DataSources", subKeyName = "{0ebaab6e-ca80-4b4a-8ddf-cbe6bf058c71}"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.GetValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", name = "InstallDir", defaultValue = <null>
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", subKeyName = "DataProviders", writable = True
+Installer.exe: #[getLineNumber]: RegistryHelper.DeleteSubKeyTree: rootKey = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0\DataProviders", subKeyName = "{0ebaab6e-ca80-4b4a-8ddf-cbe6bf058c70}"
+Installer.exe: #[getLineNumber]: RegistryHelper.OpenSubKey: rootKey = "HKEY_LOCAL_MACHINE", subKeyName = "Software${wow64}\Microsoft\VisualStudio\11.0", writable = False
+Installer.exe: #[getLineNumber]: RegistryHelper.GetValue: key = "HKEY_LOCAL_MACHINE\Software${wow64}\Microsoft\VisualStudio\11.0", name = "InstallDir", defaultValue = <null>
+Installer.exe: #[getLineNumber]: Installer.RemoveVsDevEnvSetup: Preparing to run Visual Studio v11.0 'setup' mode to refresh its configuration.
+Installer.exe: #[getLineNumber]: Installer.AddVsDevEnvSetup: fileName = "[file nativename [file join [expr {$is64 ? ${::env(ProgramFiles(x86))} : $::env(ProgramFiles)}] {Microsoft Visual Studio 11.0} Common7 IDE devenv.exe]]", arguments = "/setup", workingDirectory = "[file nativename [file join [expr {$is64 ? ${::env(ProgramFiles(x86))} : $::env(ProgramFiles)}] {Microsoft Visual Studio 11.0} Common7 IDE]]\", useShellExecute = False, redirectStandardOutput = True, redirectStandardError = True
+Installer.exe: #[getLineNumber]: Installer.Main: subKeysCreated = 0, subKeysDeleted = 5, keyValuesRead = 5, keyValuesWritten = 0, keyValuesDeleted = 1
+Installer.exe: #[getLineNumber]: Installer.Main: filesCreated = 1, filesModified = 1, filesDeleted = 0
+Installer.exe: #[getLineNumber]: RegistryHelper.WriteOperationList: Operation log file name not set.
+Installer.exe: #[getLineNumber]: Installer.Main: Success.
