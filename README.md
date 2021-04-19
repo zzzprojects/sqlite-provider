@@ -3,7 +3,8 @@ sqlite-provider
 
 This repository contains the complete source code for the SQLite database engine.
 
-https://sqlite.org/src/doc/trunk/README.md
+[Read Me](https://sqlite.org/src/doc/trunk/README.md)
+[SQLite Website](https://www.sqlite.org/index.html)
 
 ## Contribute
 
